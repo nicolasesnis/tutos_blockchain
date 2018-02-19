@@ -38,14 +38,64 @@
     </nav>
 
 
-    <h1>Explorateur Bitcoin</h1>
-    <h2>Nicolas Esnis (nicolas.esnis@*****.fr)</h2>
-    <img src="/images/profile_picture.jpg" class="img-thumbnail" style="width: 300px;" alt="Nicolas Esnis">
-    <br>
-    <a href="https://www.facebook.com/nico.zepateforcat"><i class="fab fa-4x fa-facebook"></i></a>
-
-
-
     <h2>Explorateur Bitcoin</h1>
+
+  <div class="form-group row">
+    <label for="example-number-input" class="col-2 col-form-label">Type a block number</label>
+    <div class="">
+      <input class="form-control" type="number" value="42" id="block_number">
+    </div>
+    <button type="submit" class="btn btn-primary" id="block_search">Go</button>
+  </div>
+
+  <button id="button_hide_block_info" href='#block_search_result' class='d-none btn btn-primary' data-toggle='collapse'>Masquer</button>
+  <div id="block_search_result" class="collapse show"></div>
+
+    <h3>Informations Générales</h3>
+
+
+    <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Info</th>
+        <th>Description</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>The name of the blockchain represented, in the form of $COIN.$CHAIN</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Height</td>
+        <td>The current height of the blockchain; i.e., the number of blocks in the blockchain.</td>
+        <td id="height"></td>
+      </tr>
+      <tr>
+        <td>Hash</td>
+        <td>The hash of the latest confirmed block in the blockchain; in Bitcoin, the hashing function is SHA256(SHA256(block)).</td>
+        <td id="hash"></td>
+      </tr>
+      <tr>
+        <td>Last Fork</td>
+        <td>The current height of the latest fork to the blockchain; when no competing blockchain fork present, not returned with endpoints that return Blockchains.</td>
+        <td id="last_fork"></td>
+      </tr>
+      <tr>
+        <td>Fee in satoshi</td>
+        <td>A rolling average of the fee (in satoshis) paid per kilobyte for transactions to be confirmed within 3 to 6 blocks.</td>
+        <td id="fee_in_satoshi"></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
   </body>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="/js/app.js" defer></script>
 </html>
