@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title> Home </title>
+    <title> Bitcoin </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -12,7 +12,6 @@
 
   </head>
   <body>
-
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,15 +46,93 @@
       </div>
     </nav>
 
-
-    <h1>Explorateur Bitcoin</h1>
-    <h2>Nicolas Esnis (nicolas.esnis@*****.fr)</h2>
-    <img src="/images/profile_picture.jpg" class="img-thumbnail" style="width: 300px;" alt="Nicolas Esnis">
-    <br>
-    <a href="https://www.facebook.com/nico.zepateforcat"><i class="fab fa-4x fa-facebook"></i></a>
-
-
-
-    <h2>Explorateur Bitcoin</h1>
+    <div class="container">
+      <h3>Block <span id="block_number"></span></h3>
+      <div id="block_information" class="row">
+        <div class="col-6">
+          <table class=table table-dark table-striped'>
+            <thead>
+              <tr>
+                <th>Sommaire</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre de transactions</td>
+                <td id="n_tx"></td>
+              </tr>
+              <tr>
+                <td>Volume estimé des transactions</td>
+                <td id="total"></td>
+              </tr>
+              <tr>
+                <td>Frais des transactions</td>
+                <td id="fees"></td>
+              </tr>
+              <tr>
+                <td>Hauteur</td>
+                <td id="height"></td>
+              </tr>
+              <tr>
+                <td>Date (timestamp)</td>
+                <td id="time"></td>
+              </tr>
+              <tr>
+                <td>Date de réception</td>
+                <td id="received_time"></td>
+              </tr>
+              <tr>
+                <td>Relayé par</td>
+                <td id="related_by"></td>
+              </tr>
+              <tr>
+                <td>Difficulté</td>
+                <td id="bits"></td>
+              </tr>
+              <tr>
+                <td>Taille</td>
+                <td id="size"></td>
+              </tr>
+              <tr>
+                <td>Version</td>
+                <td id="ver"></td>
+              </tr>
+              <tr>
+                <td>Nonce</td>
+                <td id="nonce"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-6">
+          <table class=table table-dark table-striped'>
+            <thead>
+              <tr>
+                <th>Hashes</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <td>Hash</td>
+                <td id="hash"></td>
+              </tr>
+               <tr>
+                <td>Block précédent</td>
+                <td id="prev_block"></td>
+              </tr>
+               <tr>
+                <td>Merkle root</td>
+                <td id="mrkl_root"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h3>Transactions</h3>
+    </div>
   </body>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/block.js" defer></script>
 </html>

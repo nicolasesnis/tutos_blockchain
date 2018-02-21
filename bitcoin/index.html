@@ -2,6 +2,7 @@
 <html>
   <head>
     <title> Bitcoin </title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -25,6 +26,15 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/bitcoin/index.html">Bitcoin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/outils/text_hasher.html">Text hasher</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/outils/proof_of_existence.html">Proof of Existence</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/outils/verify.html">Verify</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
@@ -106,21 +116,21 @@
       <button id="button_hide_transaction_info" href='#transaction_search_result' class='float-right d-none btn btn-primary' data-toggle='collapse'>Masquer</button>
       <div id="transaction_search_result" class="collapse show"></div>
 
-      <!-- <h3>Address Stalker</h3>
-      <p>Enter a address:</p>
+      <h3>Address Stalker</h3>
+      <p>Enter an address:</p>
       <div class="form-inline">
         <div class="form-group">
-          <input class="form-control mx-sm-3" type="text" value="f854aebae95150b379cc1187d848d58225f3c4157fe992bcd166f58bd5063449" id="transaction_hash">
-          <button class="btn btn-primary" id="transaction_search">Go</button>
+          <input class="form-control mx-sm-3" type="text" value="1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD" id="address">
+          <button class="btn btn-primary" id="address_search">Go</button>
         </div>
       </div>
 
-      <button id="button_hide_transaction_info" href='#transaction_search_result' class='float-right d-none btn btn-primary' data-toggle='collapse'>Masquer</button>
-      <div id="transaction_search_result" class="collapse show"></div> -->
+      <button id="button_hide_address_info" href='#address_search_result' class='float-right d-none btn btn-primary' data-toggle='collapse'>Masquer</button>
+      <div id="address_search_result" class="collapse show"></div>
 
     </div>
   </body>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="/js/app.js" defer></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/index.js" defer></script>
 </html>

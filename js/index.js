@@ -18,7 +18,7 @@ $(document).ready(function() {
     },
 
     error : function(xhr, status, err) {
-      $('latestblock').html(err+" N/A");
+      $('#latestblock').html(err+" N/A");
     }
   });
 });
@@ -36,8 +36,8 @@ $('#block_search').click(function(data) {
 
     success : function(data) {
       $("#button_hide_block_info").removeClass("d-none");
-      $('#block_search_result').html("\
-          <table class=table table-dark table-striped'>\
+      $('#block_search_result').html("<br><br><br><a href='block.html?block="+data.height+"'><h4>Block "+data.height+"</h4></a>\
+      <table class=table table-dark table-striped'>\
         <thead>\
           <tr>\
             <th>Attribut</th>\
@@ -104,7 +104,7 @@ $('#block_search').click(function(data) {
         console.log(last_block_number)
         $('#block_search_result').html("Entrez une valeur comprise entre 1 et "+last_block_number)
       }
-      $('block_search_result').append(err+" N/A");
+      $('#block_search_result').append(err+" N/A");
     }
   });
 });
@@ -133,7 +133,7 @@ $('#transaction_search').click(function(data) {
 
     success : function(data) {
       $("#button_hide_transaction_info").removeClass("d-none");
-      $('#transaction_search_result').html("\
+      $('#transaction_search_result').html("<br><br><br><a href='transaction.html?transaction="+data.hash+"'><h4>Transaction "+data.hash+"</h4></a>\
           <table class=table table-dark table-striped'>\
         <thead>\
           <tr>\
@@ -207,5 +207,95 @@ $("#button_hide_transaction_info").click(function() {
   else {
     console.log("to")
     $("#button_hide_transaction_info").html("Afficher")
+  }
+})
+
+
+
+$('#address_search').click(function(data) {
+  $.ajax({
+    url : "https://api.blockcypher.com/v1/btc/main/addrs/"+address.value+"?token=a14372287af24e45a90ff493ea6ecde2",
+    dataType : "json",
+    contentType : "application/json; charset=utf-8",
+    type : "GET",
+    timeout:  "5000",
+    async : false,
+
+
+    success : function(data) {
+      $("#button_hide_address_info").removeClass("d-none");
+      $('#address_search_result').html("<br><br><br><a href='address.html?address="+data.address+"'><h4>Address "+data.address+"</h4></a>\
+          <table class=table table-dark table-striped'>\
+        <thead>\
+          <tr>\
+            <th>Attribut</th>\
+            <th>Description</th>\
+            <th>Valeur</th>\
+          </tr>\
+        </thead>\
+        <tbody>\
+          <tr>\
+            <td>address</td>\
+            <td>The requested address. Not returned if querying a wallet/HD wallet</td>\
+            <td>"+data.address+"</td>\
+          </tr>\
+          <tr>\
+            <td>wallet</td>\
+            <td> The requested wallet object. Only returned if querying by wallet name instead of public address.</td>\
+            <td>"+data.wallet+"</td>\
+          </tr>\
+          <tr>\
+            <td>hd_wallet</td>\
+            <td>The requested HD wallet object. Only returned if querying by HD wallet name instead of public address.</td>\
+            <td>"+data.hd_wallet+"</td>\
+          </tr>\
+          <tr>\
+            <td>total_received</td>\
+            <td>Total amount of confirmed satoshis received by this address.</td>\
+            <td>"+data.total_received+"</td>\
+          </tr>\
+          <tr>\
+            <td>total_sent</td>\
+            <td>Total amount of confirmed satoshis sent by this address.</td>\
+            <td>"+data.total_sent+"</td>\
+          </tr>\
+          <tr>\
+            <td>balance</td>\
+            <td>Balance of confirmed satoshis on this address. This is the difference between outputs and inputs on this address, but only for transactions that have been included into a block (i.e., for transactions whose confirmations > 0).</td>\
+            <td>"+data.balance+"</td>\
+          </tr>\
+          <tr>\
+            <td>unconfirmed_balance</td>\
+            <td>Balance of unconfirmed satoshis on this address. Can be negative (if unconfirmed transactions are just spending outputs). Only unconfirmed transactions (haven’t made it into a block) are included.</td>\
+            <td>"+data.unconfirmed_balance+"</td>\
+          </tr>\
+          <tr>\
+            <td>final_balance</td>\
+            <td>Total balance of satoshis, including confirmed and unconfirmed transactions, for this address.</td>\
+            <td>"+data.final_balance+"</td>\
+          </tr>\
+          <tr>\
+            <td>txs</td>\
+            <td>Array of full transaction details associated with this address. Usually only returned from the Address Full Endpoint.</td>\
+            <td>"+data.txs+"</td>\
+          </tr>\
+        </tbody>\
+      </table>")},
+    error : function(xhr, status, err) {
+      if (!/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(address.value)) {
+        $('#address_search_result').html("Entrez une addresse valide")
+      }
+      $('address_search_result').append(err+" N/A");
+    }
+  });
+});
+
+
+$("#button_hide_address_info").click(function() {
+  if ($("#button_hide_address_info").text() == "Afficher") {
+    $("#button_hide_address_info").html("Masquer");
+  }
+  else {
+    $("#button_hide_address_info").html("Afficher")
   }
 })

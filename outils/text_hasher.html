@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title> Home </title>
+    <title> Bitcoin </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -12,7 +12,6 @@
 
   </head>
   <body>
-
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,15 +46,23 @@
       </div>
     </nav>
 
+    <div class="container">
+      <div class="form-group">
+        <label for="exampleTextarea">Type some text</label>
+        <textarea class="form-control" id="message" rows="3"></textarea>
+      </div>
+      <button id="sha256-btn" type="submit" class="btn btn-primary">SHA256</button>
+      <p id="result"></p>
+    </div>
 
-    <h1>Explorateur Bitcoin</h1>
-    <h2>Nicolas Esnis (nicolas.esnis@*****.fr)</h2>
-    <img src="/images/profile_picture.jpg" class="img-thumbnail" style="width: 300px;" alt="Nicolas Esnis">
-    <br>
-    <a href="https://www.facebook.com/nico.zepateforcat"><i class="fab fa-4x fa-facebook"></i></a>
 
-
-
-    <h2>Explorateur Bitcoin</h1>
   </body>
+  <script src="/node_modules/js-sha256/src/sha256.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $('#sha256-btn').click(function() {
+      $('#result').html("The Hash is: "+sha256(($('#message').val())))
+    })
+
+  </script>
 </html>

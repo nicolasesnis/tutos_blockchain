@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title> Home </title>
+    <title> Bitcoin </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -12,7 +12,6 @@
 
   </head>
   <body>
-
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,15 +46,69 @@
       </div>
     </nav>
 
-
-    <h1>Explorateur Bitcoin</h1>
-    <h2>Nicolas Esnis (nicolas.esnis@*****.fr)</h2>
-    <img src="/images/profile_picture.jpg" class="img-thumbnail" style="width: 300px;" alt="Nicolas Esnis">
-    <br>
-    <a href="https://www.facebook.com/nico.zepateforcat"><i class="fab fa-4x fa-facebook"></i></a>
-
-
-
-    <h2>Explorateur Bitcoin</h1>
+    <div class="container">
+      <h3>Address: <span id="address_hash"></span></h3>
+      <p>Les adresses sont des identifiants que vous pouvez utiliser pour envoyer des bitcoins à quelqu'un d'autre</p>
+      <div id="address_information" class="row">
+        <div class="col-5">
+          <table class=table table-dark table-striped'>
+            <thead>
+              <tr>
+                <th>Sommaire</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Addresse</td>
+                <td id="address"></td>
+              </tr>
+              <tr>
+                <td>h160</td>
+                <td id=""></td>
+              </tr>
+              <tr>
+                <td>Outils</td>
+                <td id=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-5">
+          <table class=table table-dark table-striped'>
+            <thead>
+              <tr>
+                <th>Transactions</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <td>Total reçu</td>
+                <td id="total_received"></td>
+              </tr>
+               <tr>
+                <td>Total envoyé</td>
+                <td id="total_sent"></td>
+              </tr>
+              <tr>
+                <td>Balance</td>
+                <td id="balance"></td>
+              </tr>
+              <tr>
+                <td>Nombre de transactions</td>
+                <td id="n_tx"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="qrcode" class="col-2">
+        </div>
+      </div>
+      <h3>Transactions</h3>
+    </div>
   </body>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/qrcode.min.js"></script>
+  <script type="text/javascript" src="/js/address.js" defer></script>
 </html>
