@@ -51,18 +51,11 @@
         <label for="exampleTextarea">Type some text</label>
         <textarea class="form-control" id="message" rows="3"></textarea>
       </div>
-      <button id="sha256-btn" type="submit" class="btn btn-primary">SHA256</button>
-      <p id="result"></p>
+      <button id="sha256-btn-text" type="submit" class="btn btn-primary">SHA256</button>
+      <p id="result-text"></p>
     </div>
 
 
   </body>
-  <script src="/node_modules/js-sha256/src/sha256.js"></script>
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script>
-    $('#sha256-btn').click(function() {
-      $('#result').html("The Hash is: "+sha256(($('#message').val())))
-    })
-
-  </script>
+  <script src="../hash_text_bundle.js"></script>
 </html>

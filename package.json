@@ -1,0 +1,25 @@
+{
+  "name": "tutos_blockchain",
+  "version": "1.0.0",
+  "description": "Interactions de base avec la techno blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasesnis/tutos_blockchain.git"
+  },
+  "author": "Nicolas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolasesnis/tutos_blockchain/issues"
+  },
+  "homepage": "https://github.com/nicolasesnis/tutos_blockchain#readme",
+  "dependencies": {
+    "brfs": "^1.4.4",
+    "hash-files": "^1.1.1",
+    "jquery": "^3.3.1",
+    "js-sha256": "^0.9.0"
+  }
+}
